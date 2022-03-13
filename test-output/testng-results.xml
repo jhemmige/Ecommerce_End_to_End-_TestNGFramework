@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="parallel_test" duration-ms="58068" started-at="2022-03-13T13:56:49 IST" finished-at="2022-03-13T13:57:47 IST">
+    <groups>
+      <group name="Smoke">
+        <method signature="LogInTest_Using_ExcelDataProvider.UserLogin_with_DataDriven(java.lang.String,java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="UserLogin_with_DataDriven" class="com.mystore.testcases.LogInTest_Using_ExcelDataProvider"/>
+      </group> <!-- Smoke -->
+    </groups>
+    <test name="Testng_DataDriven_Using_Excel" duration-ms="58068" started-at="2022-03-13T13:56:49 IST" finished-at="2022-03-13T13:57:47 IST">
+      <class name="com.mystore.testcases.LogInTest_Using_ExcelDataProvider">
+        <test-method status="PASS" signature="loadConfig()[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="loadConfig" is-config="true" duration-ms="710" started-at="2022-03-13T13:56:49 IST" finished-at="2022-03-13T13:56:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loadConfig -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="setup" is-config="true" duration-ms="19090" started-at="2022-03-13T13:56:51 IST" finished-at="2022-03-13T13:57:10 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="UserLogin_with_DataDriven(java.lang.String,java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="UserLogin_with_DataDriven" duration-ms="5460" started-at="2022-03-13T13:57:10 IST" data-provider="Credentials" finished-at="2022-03-13T13:57:15 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin@xyz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogin_with_DataDriven -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="teardown" is-config="true" duration-ms="222" started-at="2022-03-13T13:57:15 IST" finished-at="2022-03-13T13:57:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="setup" is-config="true" duration-ms="8135" started-at="2022-03-13T13:57:16 IST" finished-at="2022-03-13T13:57:24 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="UserLogin_with_DataDriven(java.lang.String,java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="UserLogin_with_DataDriven" duration-ms="6088" started-at="2022-03-13T13:57:24 IST" data-provider="Credentials" finished-at="2022-03-13T13:57:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[jhemmige@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jhemmige123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogin_with_DataDriven -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="teardown" is-config="true" duration-ms="225" started-at="2022-03-13T13:57:30 IST" finished-at="2022-03-13T13:57:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="setup" is-config="true" duration-ms="9579" started-at="2022-03-13T13:57:30 IST" finished-at="2022-03-13T13:57:40 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="UserLogin_with_DataDriven(java.lang.String,java.lang.String)[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="UserLogin_with_DataDriven" duration-ms="7582" started-at="2022-03-13T13:57:40 IST" data-provider="Credentials" finished-at="2022-03-13T13:57:47 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[testing_11@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLogin_with_DataDriven -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="teardown" is-config="true" duration-ms="221" started-at="2022-03-13T13:57:47 IST" finished-at="2022-03-13T13:57:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.mystore.testcases.LogInTest_Using_ExcelDataProvider@646007f4]" name="afterSuite" is-config="true" duration-ms="1038" started-at="2022-03-13T13:57:52 IST" finished-at="2022-03-13T13:57:54 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.mystore.testcases.LogInTest_Using_ExcelDataProvider -->
+    </test> <!-- Testng_DataDriven_Using_Excel -->
+  </suite> <!-- parallel_test -->
+</testng-results>

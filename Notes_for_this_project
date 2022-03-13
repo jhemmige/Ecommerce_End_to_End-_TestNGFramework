@@ -1,0 +1,320 @@
+This project was created with the intention of showing the automation framework to XWP
+
+1. Log4j
+================================================================================
+
+-->Add/Create Log4j.xml in project directory
+
+-->Add/Create Log Class in utility Package
+
+-->Configure @BeforeSuite at BaseClass to configure log4j.xml
+DOMConfigurator.configure("log4j.xml");
+
+-->Need to just Call in methods in testCase from Log class
+
+
+
+
+2. DataDriven Testing and DataProvider
+================================================================================
+
+-->Add/Create ExcelLibrary in utility package.
+
+-->Create a Folder under src/test/resources and add TestData.xlxs in that.
+
+-->Create a package for DataProvider (Com.mystore.dataprovider) and add DataProvider class there 
+and create the object of ExcelLibrary Class
+
+-->Add the DataProvider methods 
+
+-->Call the DataProvider methods from testcases
+
+
+
+3. Extent Report
+================================================================================
+
+-->Add/Create extent-config.xml file for Extent Report Configuration
+
+-->Add/Create ExtentManager Class in utility Package-- to create the object 
+of ExtentHtmlReporter and load extent-config.xml  
+
+-->Create a folder ro Save Extent Report under test-output
+
+-->Configure ExtentManager.setExtent() in @BeforeSuite method in BaseClass
+
+-->Configure ExtentManager.endReport() in @AfterSuite method in BaseClass
+
+-->Add/Create screenShot method in Action/BaseClass
+
+To attach the screenshot in extent report
+-->Add/Create a Listener Class -- ListenerClass
+
+-->To call the listener Add the below listener (inside suite tag) 
+setting in testng.xml
+
+<listeners>
+<listener class-name="com.Project.util.ListenerClass"></listener>
+</listeners> 
+
+
+
+
+//This is for creating excelsheet dataprovider.
+
+@DataProvider(name = "<WorksheetName>")
+	public Object[][] getCredentials() {
+		// Totals rows count
+		int rows = obj.getRowCount("<WorksheetName>");
+		// Total Columns
+		int column = obj.getColumnCount("<WorksheetName>");
+		int actRows = rows - 1;
+
+		Object[][] data = new Object[actRows][column];
+
+		for (int i = 0; i < actRows; i++) {
+			for (int j = 0; j < column; j++) {
+				data[i][j] = obj.getCellData("<WorksheetName>", j, i + 2);
+			}
+		}
+		return data;
+	}
+
+
+
+package com.mystore.base;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.collections4.bag.SynchronizedSortedBag;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import com.mystore.actiondriver.ActionsClass;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Baseclass {
+
+	public static Properties prop;
+
+	// public static WebDriver driver; //this method initializes a single instance
+	// of the driver
+
+	// declaring the driver for parallel execution
+
+	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+	FileInputStream fis;
+
+	@BeforeSuite (groups={"Regression","Smoke"})
+	public void BeforSuite() {
+
+		DOMConfigurator.configure("log4j.xml");
+
+	}
+
+	@BeforeTest
+	public Properties setupConfigfile() {
+
+		try {
+
+			prop = new Properties();
+
+			// System.getProperty(
+			// "/Users/jayashreehemmige/eclipse-workspace/AutomationTest_ecommerce_end_2_end_youtube/Configuration/config.properties");
+			fis = new FileInputStream(
+					"/Users/jayashreehemmige/eclipse-workspace/AutomationTest_ecommerce_end_2_end_youtube/Configuration/config.properties");
+			prop.load(fis);
+			System.out.println("driver" + driver);
+
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		return prop;
+	}
+
+	public static WebDriver getDriver() {
+		// Get Driver from threadLocalmap
+		return driver.get();
+	}
+
+	
+	
+	public void launchapp(String browserName) {
+
+		
+
+		//String browserName = prop.getProperty("browser");
+
+		if (browserName.equalsIgnoreCase("Chrome")) {
+
+			WebDriverManager.chromedriver().setup();
+
+			// System.setProperty("webdriver.chrome.driver",
+			// "/Users/jayashreehemmige/Documents/drivers/chromedriver1");
+
+			// driver = new ChromeDriver();
+
+			driver.set(new ChromeDriver());
+
+		}
+
+		else if (browserName.equalsIgnoreCase("Firefox")) {
+
+			// System.setProperty("webdriver.gecko.driver",
+			// "/Users/jayashreehemmige/Documents/drivers/geckodriver");
+
+			// driver = new FirefoxDriver();
+
+			WebDriverManager.firefoxdriver().setup();
+			driver.set(new FirefoxDriver());
+
+		}
+
+		else if (browserName.equalsIgnoreCase("IE")) {
+
+			System.out.println("internet explorer Browser");
+
+		}
+
+		//Maximize the screen
+				getDriver().manage().window().maximize();
+				//Delete all the cookies
+				getDriver().manage().deleteAllCookies();
+				//Implicit TimeOuts
+				getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				//(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
+				//PageLoad TimeOuts
+				//getDriver().manage().timeouts().pageLoadTimeout
+				//(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
+				//Launching the URL
+				
+				getDriver().get(prop.getProperty("url"));
+			
+				
+				//getDriver().get("http://automationpractice.com/index.php");
+	}
+	
+	
+
+	
+	public static String createRandomString() {
+
+		String randomString = RandomStringUtils.randomAlphanumeric(6);
+
+		return randomString;
+	}
+
+
+************
+
+package com.mystore.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.ietf.jgss.Oid;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+
+import com.beust.jcommander.Parameter;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class Baseclass {
+	public static Properties prop;
+
+	// Declare ThreadLocal Driver
+	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+
+	//loadConfig method is to load the configuration
+	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
+	public void loadConfig() {
+		
+		DOMConfigurator.configure("log4j.xml");
+
+		try {
+			prop = new Properties();
+			FileInputStream ip = new FileInputStream(
+					System.getProperty("user.dir")+ "/Configuration/config.properties");
+			prop.load(ip);
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static WebDriver getDriver() {
+		// Get Driver from threadLocalmap
+		return driver.get();
+	}
+
+	
+	public void launchapp(String browserName) {
+		// String browserName = prop.getProperty("browser");
+		if (browserName.equalsIgnoreCase("Chrome")) {
+			WebDriverManager.chromedriver().setup();
+			// Set Browser to ThreadLocalMap
+			driver.set(new ChromeDriver());
+		} else if (browserName.equalsIgnoreCase("FireFox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver.set(new FirefoxDriver());
+		} else if (browserName.equalsIgnoreCase("IE")) {
+			WebDriverManager.iedriver().setup();
+			driver.set(new InternetExplorerDriver());
+		}
+		//Maximize the screen
+		getDriver().manage().window().maximize();
+		//Delete all the cookies
+		getDriver().manage().deleteAllCookies();
+		//Implicit TimeOuts
+		//getDriver().manage().timeouts().implicitlyWait
+		//(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
+		//PageLoad TimeOuts
+		//getDriver().manage().timeouts().pageLoadTimeout
+		//(Integer.parseInt(prop.getProperty("pageLoadTimeOut")),TimeUnit.SECONDS);
+		//Launching the URL
+		//getDriver().get("http://automationpractice.com/index.php");
+		getDriver().get(prop.getProperty("url"));
+	}
+	
+	public static String createRandomString() {
+
+		String randomString = RandomStringUtils.randomAlphanumeric(6);
+
+		return randomString;
+	}
