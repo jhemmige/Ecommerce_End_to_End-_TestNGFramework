@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Mar 13 12:32:13 IST 2022</td>
+<td>Started on:</td><td>Sun Mar 13 20:34:02 IST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>51 seconds (51161 ms)</td>
+<tr><td>Total time:</td><td>89 seconds (89890 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>Regression </td>
 </tr><tr>
@@ -76,15 +76,15 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.mystore.testcases.NewAccountCreation.newAccountRegistration()'><b>newAccountRegistration</b><br>Test class: com.mystore.testcases.NewAccountCreation</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;email_create&apos;]&quot;}
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]&quot;}
   (Session info: chrome=99.0.4844.51)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;Jayashrees-MacBook-Air.local&apos;, ip: &apos;2401:4900:2500:32c6:bc3d:851c:c5d8:2%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;1.8.0_261&apos;
+System info: host: &apos;Jayashrees-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:9a:fb04:ff38:a683%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;1.8.0_261&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3bb43736a07139612b0d809b1d6d74c7, findElement {using=xpath, value=//*[@id=&apos;email_create&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /var/folders/q2/b983rsb13pn...}, goog:chromeOptions: {debuggerAddress: localhost:52147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:52147/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3bb43736a07139612b0d809b1d6d74c7
+Command: [0bf10bf77d0205cbd7fff4efff324730, findElement {using=xpath, value=//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /var/folders/q2/b983rsb13pn...}, goog:chromeOptions: {debuggerAddress: localhost:60496}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:60496/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0bf10bf77d0205cbd7fff4efff324730
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
@@ -98,20 +98,20 @@ Session ID: 3bb43736a07139612b0d809b1d6d74c7
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy19.clear(Unknown Source)
-	at com.mystore.pageobjects.SignInPage.createNewAccount(SignInPage.java:59)
-	at com.mystore.testcases.NewAccountCreation.newAccountRegistration(NewAccountCreation.java:64)
+	at com.sun.proxy.$Proxy19.getText(Unknown Source)
+	at com.mystore.pageobjects.HomePage.welcometxtdisplay(HomePage.java:73)
+	at com.mystore.testcases.NewAccountCreation.newAccountRegistration(NewAccountCreation.java:81)
 	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace703232177", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace703232177'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;email_create&apos;]&quot;}
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace835631769", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace835631769'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]&quot;}
   (Session info: chrome=99.0.4844.51)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
-System info: host: &apos;Jayashrees-MacBook-Air.local&apos;, ip: &apos;2401:4900:2500:32c6:bc3d:851c:c5d8:2%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;1.8.0_261&apos;
+System info: host: &apos;Jayashrees-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:9a:fb04:ff38:a683%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;1.8.0_261&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3bb43736a07139612b0d809b1d6d74c7, findElement {using=xpath, value=//*[@id=&apos;email_create&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /var/folders/q2/b983rsb13pn...}, goog:chromeOptions: {debuggerAddress: localhost:52147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:52147/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3bb43736a07139612b0d809b1d6d74c7
+Command: [0bf10bf77d0205cbd7fff4efff324730, findElement {using=xpath, value=//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /var/folders/q2/b983rsb13pn...}, goog:chromeOptions: {debuggerAddress: localhost:60496}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:60496/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0bf10bf77d0205cbd7fff4efff324730
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -129,9 +129,9 @@ Session ID: 3bb43736a07139612b0d809b1d6d74c7
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy19.clear(Unknown Source)
-	at com.mystore.pageobjects.SignInPage.createNewAccount(SignInPage.java:59)
-	at com.mystore.testcases.NewAccountCreation.newAccountRegistration(NewAccountCreation.java:64)
+	at com.sun.proxy.$Proxy19.getText(Unknown Source)
+	at com.mystore.pageobjects.HomePage.welcometxtdisplay(HomePage.java:73)
+	at com.mystore.testcases.NewAccountCreation.newAccountRegistration(NewAccountCreation.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -161,7 +161,7 @@ Session ID: 3bb43736a07139612b0d809b1d6d74c7
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>2</td>
+<td>22</td>
 <td>com.mystore.testcases.NewAccountCreation@2fd66ad3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -174,7 +174,7 @@ Session ID: 3bb43736a07139612b0d809b1d6d74c7
 <tr>
 <td title='com.mystore.testcases.EndtoEnd_Purchase_flow.placeOrder()'><b>placeOrder</b><br>Test class: com.mystore.testcases.EndtoEnd_Purchase_flow</td>
 <td></td>
-<td>21</td>
+<td>37</td>
 <td>com.mystore.testcases.EndtoEnd_Purchase_flow@5fdba6f9</td></tr>
 </table><p>
 </body>

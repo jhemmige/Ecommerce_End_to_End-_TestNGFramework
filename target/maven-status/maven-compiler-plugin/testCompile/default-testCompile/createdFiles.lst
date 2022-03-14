@@ -1,0 +1,7 @@
+com/mystore/testcases/AccountCreationblockDisplayTest.class
+com/mystore/testcases/NewAccountCreation.class
+com/mystore/testcases/IndexPageTest.class
+com/mystore/testcases/EndtoEnd_Purchase_flow.class
+com/mystore/testcases/HomePageTest.class
+com/mystore/testcases/LogInTest_Using_ExcelDataProvider.class
+com/mystore/testcases/LoginPageTest.class

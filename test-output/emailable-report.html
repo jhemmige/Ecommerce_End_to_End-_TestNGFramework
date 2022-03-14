@@ -8,13 +8,38 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">parallel_test</th></tr>
-<tr><td><a href="#t0">Testng_DataDriven_Using_Excel</a></td><td class="num">3</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">58,068</td><td></td><td></td></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Regression</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">89,890</td><td>Regression</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">parallel_test</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Testng_DataDriven_Using_Excel &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">com.mystore.testcases.LogInTest_Using_ExcelDataProvider</td><td><a href="#m0">UserLogin_with_DataDriven</a></td><td rowspan="3">1647160030416</td><td rowspan="3">5460</td></tr><tr class="passedeven"><td><a href="#m1">UserLogin_with_DataDriven</a></td></tr><tr class="passedeven"><td><a href="#m2">UserLogin_with_DataDriven</a></td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Regression &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.mystore.testcases.NewAccountCreation</td><td><a href="#m0">newAccountRegistration</a></td><td rowspan="1">1647183861098</td><td rowspan="1">22048</td></tr><tr><th colspan="4">Regression &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.mystore.testcases.EndtoEnd_Purchase_flow</td><td><a href="#m1">placeOrder</a></td><td rowspan="1">1647183893887</td><td rowspan="1">37852</td></tr></tbody>
 </table>
-<h2>Testng_DataDriven_Using_Excel</h2><h3 id="m0">com.mystore.testcases.LogInTest_Using_ExcelDataProvider#UserLogin_with_DataDriven</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>admin@xyz.com</td><td>admin@123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.mystore.testcases.LogInTest_Using_ExcelDataProvider#UserLogin_with_DataDriven</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>jhemmige@gmail.com</td><td>jhemmige123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.mystore.testcases.LogInTest_Using_ExcelDataProvider#UserLogin_with_DataDriven</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>testing_11@gmail.com</td><td>admin@123</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Regression</h2><h3 id="m0">com.mystore.testcases.NewAccountCreation#newAccountRegistration</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]&quot;}
+  (Session info: chrome=99.0.4844.51)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.1.2&apos;, revision: &apos;9a5a329c5a&apos;
+System info: host: &apos;Jayashrees-MacBook-Air.local&apos;, ip: &apos;fe80:0:0:0:9a:fb04:ff38:a683%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.7&apos;, java.version: &apos;1.8.0_261&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0bf10bf77d0205cbd7fff4efff324730, findElement {using=xpath, value=//*[text()=&apos;Welcome to your account. Here you can manage all of your personal information and orders.&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 99.0.4844.51, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: /var/folders/q2/b983rsb13pn...}, goog:chromeOptions: {debuggerAddress: localhost:60496}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:60496/devtoo..., se:cdpVersion: 99.0.4844.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0bf10bf77d0205cbd7fff4efff324730
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy19.getText(Unknown Source)
+	at com.mystore.pageobjects.HomePage.welcometxtdisplay(HomePage.java:73)
+	at com.mystore.testcases.NewAccountCreation.newAccountRegistration(NewAccountCreation.java:81)
+	at java.util.ArrayList.forEach(ArrayList.java:1259)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.mystore.testcases.EndtoEnd_Purchase_flow#placeOrder</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

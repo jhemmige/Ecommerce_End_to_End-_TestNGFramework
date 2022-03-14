@@ -4,8 +4,13 @@
   <listeners>
     <listener class-name="com.mystore.utility.ListenerClass"/>
   </listeners>
-  <test thread-count="5" name="Testng_all(failed)">
+  <test thread-count="5" name="Regression(failed)">
     <parameter name="browser" value="Chrome"/>
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.mystore.testcases.NewAccountCreation">
         <methods>
@@ -17,5 +22,5 @@
         </methods>
       </class> <!-- com.mystore.testcases.NewAccountCreation -->
     </classes>
-  </test> <!-- Testng_all(failed) -->
+  </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -17,7 +17,7 @@
       <class name="com.mystore.testcases.NewAccountCreation"/>
       <class name="com.mystore.testcases.IndexPageTest"/>
       <class name="com.mystore.testcases.HomePageTest"/>
-      <class name="com.mystore.testcases.AccountCreationblockDisplayTest"/>
+    <!--  <class name="com.mystore.testcases.AccountCreationblockDisplayTest"/>-->
     <class name="com.mystore.testcases.EndtoEnd_Purchase_flow"/>
       <class name="com.mystore.testcases.LogInTest_Using_ExcelDataProvider"/>
     </classes>
